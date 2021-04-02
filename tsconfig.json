@@ -1,0 +1,164 @@
+{
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ],
+  "compilerOptions": {
+    /* Basic Options */
+
+    /* 选项将一堆信息保存到 .tsbuildinfo 文件中，该文件可用于加快对 tsc 的后续调用。 */
+    // "incremental": true,
+
+    /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */
+    "target": "esNext",
+    /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
+    "module": "esNext",
+    /* lib用于指定要包含在编译中的库文件 */
+    /* "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],*/
+
+    /* 允许编译javascript文件. */
+    "allowJs": true,
+    /* 在.js文件中输出错误 */
+    // "checkJs": true,
+
+    /* 指定JSX代码生成: 
+    'preserve模式将保持JSX作为输出的一部分，以便由另一个变换步骤（例如Babel）进一步编译。 此外，输出将具有.jsx文件扩展名', 
+    'react-native模式相当于保留，因为它保留了所有JSX，但输出将具有.js文件扩展名。',
+    'react模式将编译React.createElement，在使用之前不需要经过JSX转换，输出将具有.js文件扩展名' */
+    "jsx": "preserve",
+    /* 生成相应的d.ts 文件 */
+    // "declaration": true,
+
+    /* 为每个对应的'.d.ts 文件生成一个sourcemap */
+    // "declarationMap": true,
+
+    /* 生成相应的sourcemap文件 */
+    "sourceMap": true,
+    /* // 将多个相互依赖的文件生成一个文件，可以用在AMD模块中，即开启时应设置"module": "AMD",. */
+    // "outFile": "./",
+
+    /* 指定输出目录. */
+    "outDir": "./build",
+
+    /* 指定输出文件目录(用于输出)，用于控制输出目录结构 */
+    "rootDir": "./",
+
+
+    /* // 增量编译文件的存储位置 */
+    // "tsBuildInfoFile": "./",
+
+    /*  删除注释 */
+    "removeComments": false,
+    /* 不输出文件,即编译后不会生成任何js文件 */
+    "noEmit": false,
+    /* 通过tslib引入helper函数，文件必须是模块*/
+    // "importHelpers": true,
+
+    /* 降级遍历器实现，如果目标源是es3/5，那么遍历器for-of会有降级的实现 */
+    // "downlevelIteration": true,
+
+    /* Strict Type-Checking Options */
+    /* // 开启所有严格的类型检查 */
+    "strict": true,
+    /* 不允许隐式的any类型 */
+    // "noImplicitAny": true,
+
+    /* 不允许把null、undefined赋值给其他类型的变量 */
+    // "strictNullChecks": true,
+
+    /*  不允许函数参数双向协变 */
+    // "strictFunctionTypes": true,
+
+    /* 严格的bind/call/apply检查*/
+    // "strictBindCallApply": true,
+
+    /* 类的实例属性必须初始化 */
+    // "strictPropertyInitialization": true,
+
+    /* 不允许this有隐式的any类型 */
+    // "noImplicitThis": true,
+
+    /* 在代码中注入'use strict' */
+    // "alwaysStrict": true,
+
+    /* Additional Checks */
+    /*  检查只声明、未使用的局部变量(只提示不报错)*/
+    // "noUnusedLocals": true,
+
+    /* // 检查未使用的函数参数(只提示不报错) */
+    // "noUnusedParameters": true,
+
+    /* //每个函数都会有返回值 */
+    // "noImplicitReturns": true,
+
+    /* 防止switch语句贯穿(即如果没有break语句后面不会执行) */
+    // "noFallthroughCasesInSwitch": true,
+
+    /* Module Resolution Options */
+    /* // 模块解析策略，ts默认用node的解析策略，即相对的方式导入 */
+    "moduleResolution": "node",
+    /* 解析非相对模块的基础地址，默认是当前目录 */
+    "baseUrl": "./",
+    /*  路径映射，相对于baseUrl */
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+      // 如：使用jq时不想使用默认版本，而需要手动指定版本，可进行如下配置
+      // "jquery": ["node_modules/jquery/dist/jquery.min.js"]
+    },
+    /* 将多个目录放在一个虚拟目录下，用于运行时，即编译后引入文件的位置可能发生变化，这也设置可以虚拟src和out在同一个目录下，不用再去改变路径也不会报错 */
+    // "rootDirs": [],
+
+    /* 声明文件目录，默认时node_modules/@types */
+    // "typeRoots": [],
+
+    /* 加载的声明文件包 */
+    // "types": [],
+
+    /* import * as React from 'react' => import React from 'react' */
+    "allowSyntheticDefaultImports": true,
+    /* 允许export=导出，由import from 导入与allowSyntheticDefaultImports配置关联*/
+    "esModuleInterop": true,
+    /* Do not resolve the real path of symlinks. */
+    // "preserveSymlinks": true,
+
+    /* 允许在模块中全局变量的方式访问umd模块 */
+    // "allowUmdGlobalAccess": true,
+
+    /* Source Map Options */
+    /* Specify the location where debugger should locate TypeScript files instead of source locations. */
+    // "sourceRoot": "",
+
+    /* Specify the location where debugger should locate map files instead of generated locations. */
+    // "mapRoot": "",
+
+    /* Emit a single file with source maps instead of having a separate file. */
+    // "inlineSourceMap": true,
+
+    /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
+    // "inlineSources": true,
+
+    /* Experimental Options */
+    /* 使用装饰器语法 */
+    "experimentalDecorators": true,
+    /* 启用了对为decorator发出类型元数据的实验性支持，就是引用reflect-metadata使用反射 */
+    // "emitDecoratorMetadata": true,
+
+    /* Advanced Options */
+    /* 强制文件名统一大小写, windows中文件路径不分大小写 */
+    "forceConsistentCasingInFileNames": true,
+    /* 允许从 .json 中导入、导出其类型 */
+    "resolveJsonModule": false,
+    /* 编译器跳过对申明文件（扩展名是 .d.ts 的文件）的类型检查。如果一个程序包含大量的申明文件，编译器会花很多时间去检查这些已知没有错误的申明。如果跳过对这些申明文件的检查，编译时间会得到显著提升 */
+    "skipLibCheck": true
+  }
+}

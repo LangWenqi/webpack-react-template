@@ -1,0 +1,28 @@
+import React, { FC, useState } from 'react';
+import { observer } from 'mobx-react';
+import { Input, Button } from 'antd';
+import { usePageStores } from '../../store';
+
+const RControl: FC = () => {
+  const { controlStore } = usePageStores();
+  const [keyword, setKeyword] = useState('');
+
+  const handleSearch = () => {
+    controlStore.setControlDataKey('keyword', keyword);
+    // tableStore.changePage(1)
+    // tableStore.handleDataSource(controlStore.controlData);
+  }
+
+  return (
+    <div className='bg-white padding-all-16' flex='cross:center'>
+      <span>关键词：</span>
+      <div className='input-width'>
+        {/* <Input placeholder='请输入关键词' value={controlStore.controlData.keyword} onChange={(e) => controlStore.setControlDataKey('keyword', e.target.value)} allowClear /> */}
+        <Input placeholder='请输入关键词' value={keyword} onChange={(e) => setKeyword(e.target.value)} allowClear />
+      </div>
+      <Button type='primary' className='margin-left-12' onClick={() => handleSearch()}>查询</Button>
+    </div>
+  );
+}
+
+export default observer(RControl);
